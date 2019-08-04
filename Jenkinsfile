@@ -4,7 +4,11 @@ node {
     SHARED_LIBRARY_PATH = '/vars/Pipeline.groovy'
 }
 pipeline {
-    agent none
+    agent {
+        node {
+            label 'master'
+        }
+    }
     environment {
         GIT_SSL_NO_VERIFY = true
     }
