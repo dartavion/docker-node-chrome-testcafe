@@ -11,7 +11,7 @@ pipeline {
           steps {
               checkout scm
               sh 'npm install'
-              sh 'testcafe chrome:headless ./tests'
+              sh 'npm run testChromeOld'
           }
        }
     }
