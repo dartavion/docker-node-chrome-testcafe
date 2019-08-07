@@ -10,6 +10,7 @@ pipeline {
       stage ('Pre') {
           steps {
               checkout scm
+              sh 'npm install'
               sh 'testcafe chrome:headless ./tests'
           }
        }
