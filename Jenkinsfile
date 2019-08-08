@@ -2,16 +2,16 @@
 pipeline {
     agent {
       docker {
-          image 'node: 8'
           image 'timbru31/node-chrome'
+          image 'testcafe/testcafe'
       }
     }
     stages {
       stage ('Pre') {
           steps {
               checkout scm
-              sh 'npm install'
-              sh 'npm run testChromeOld'
+              sh 'npm -v'
+              sh 'node -v'
           }
        }
     }
