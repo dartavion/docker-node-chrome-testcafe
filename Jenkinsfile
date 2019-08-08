@@ -3,6 +3,7 @@ pipeline {
     agent {
       docker {
           image 'testcafe/testcafe'
+          args '--entrypoint=""'
       }
     }
     stages {
